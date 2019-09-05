@@ -7,27 +7,29 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import tws.entity.Employee;
-import tws.repository.EmployeeMapper;
+import tws.entity.ToPackage;
+import tws.repository.ToPackageMapper;
 
 import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/employees")
-public class EmployeeController {
+@RequestMapping("/topackages")
 
-    @Autowired
-    private EmployeeMapper employeeMapper;
+public class ToPackageController {
+
+	@Autowired
+    private ToPackageMapper toPackageMapper;
 
     @GetMapping("")
-    public ResponseEntity<List<Employee>> getAll() {
-        return ResponseEntity.ok(employeeMapper.selectAll());
+    public ResponseEntity<List<ToPackage>> getAll() {
+        return ResponseEntity.ok(toPackageMapper.selectAll());
     }
 
     @PostMapping("")
-    public ResponseEntity<Employee> insert(@RequestBody Employee employee) {
-        employeeMapper.insert(employee);
-        return ResponseEntity.created(URI.create("/employees/" + employee.getId())).body(employee);
+    public ResponseEntity<ToPackage> insert(@RequestBody ToPackage toPackage) {
+    	toPackageMapper.insert(toPackage);
+        return ResponseEntity.created(URI.create("/topackages/" + toPackage.getId())).body(toPackage);
     }
 }
+
