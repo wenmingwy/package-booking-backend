@@ -53,3 +53,9 @@ Caused by: java.nio.channels.OverlappingFileLockException
 	at java.nio.channels.FileChannel.tryLock(Unknown Source)
 	at org.h2.mvstore.FileStore.open(FileStore.java:165)
 	... 29 more
+2019-09-06 00:01:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TOPACKAGE" already exists; SQL statement:
+CREATE TABLE `topackage` ( `id` varchar(20) NOT NULL , `recipient` varchar(20) DEFAULT NULL, `phone` varchar(11) DEFAULT NULL, `weight` int(5) DEFAULT NULL, PRIMARY KEY (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8 [42101-197]
+2019-09-06 09:35:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TOPACKAGE" already exists; SQL statement:
+CREATE TABLE `topackage` ( `id` varchar(20) NOT NULL , `recipient` varchar(20) DEFAULT NULL, `phone` varchar(11) DEFAULT NULL, `weight` int(5) DEFAULT NULL, PRIMARY KEY (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8 [42101-197]
